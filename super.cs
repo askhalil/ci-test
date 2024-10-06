@@ -7,4 +7,3 @@ public class super
     {
         Console.WriteLine("Super.Print()");
     }
-}
