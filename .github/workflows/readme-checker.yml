@@ -1,0 +1,15 @@
+name: Readme Checker
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  readme-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Readme Checker
+        run: |
+          ls -ali
