@@ -1,4 +1,4 @@
-name: Readme Checker
+name: Linter
 
 on:
   pull_request:
@@ -6,10 +6,15 @@ on:
       - main
 
 jobs:
-  readme-checker:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Readme Checker
-        run: |
-          ls -ali
+      - name: Lint C# files
+        uses: github/super-linter@v4
+        env:
+            VALIDATE_ALL_CODEBASE: true
+            DEFAULT_BRANCH: main
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            VALIDATE_CSHARP: true
+
