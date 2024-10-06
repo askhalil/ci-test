@@ -13,3 +13,6 @@ jobs:
       - name: Readme Checker
         run: |
           ls -ali
+          if [ ! -f README.md ]; then
+            exit 1
+          fi
