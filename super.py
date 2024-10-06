@@ -1,0 +1,2 @@
+Def super:
+Print
