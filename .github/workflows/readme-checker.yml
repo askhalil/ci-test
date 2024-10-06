@@ -1,7 +1,7 @@
 name: Linter
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -13,8 +13,7 @@ jobs:
       - name: Lint C# files
         uses: github/super-linter@v4
         env:
-            VALIDATE_ALL_CODEBASE: true
-            DEFAULT_BRANCH: main
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            VALIDATE_CSHARP: true
-
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_CSHARP: true
